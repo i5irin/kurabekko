@@ -1,0 +1,22 @@
+{
+    "name": "kurabekko-dev",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "dev",
+    "workspaceFolder": "/workspaces/repo",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.formatOnSave": true,
+                "files.insertFinalNewline": true
+            },
+            "extensions": [
+                "hashicorp.terraform",
+                "ms-azuretools.vscode-azurecontainerapps",
+                "ms-azuretools.vscode-azurecli",
+                "redhat.java",
+                "vscjava.vscode-java-pack",
+                "vscjava.vscode-spring-boot-dashboard"
+            ]
+        }
+    }
+}
