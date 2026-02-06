@@ -1,0 +1,7 @@
+location = "japaneast"
+project  = "kurabekko"
+env      = "dev"
+container_image = "nginx:1.27"
+cosmos_free_tier = true
+tenant_id = "your_tenant_id"
+subscription_id = "your_subscription_id"

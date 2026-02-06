@@ -18,5 +18,6 @@
                 "vscjava.vscode-spring-boot-dashboard"
             ]
         }
-    }
+    },
+    "postCreateCommand": "cd infra && terraform -version && az version && tflint --version"
 }
