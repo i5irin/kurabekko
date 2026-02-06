@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  error:
+    include-stacktrace: never
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+app:
+  apiKey: ${APP_API_KEY:dev-api-key}
+
+line:
+  channelSecret: ${LINE_CHANNEL_SECRET:}
+
+spring:
+  application:
+    name: Kurabekko API
+  cloud:
+    azure:
+      cosmos:
+        enabled: ${COSMOS_ENABLED:false}
+        endpoint: ${COSMOS_ENDPOINT:}
+        key: ${COSMOS_KEY:}
+        database: ${COSMOS_DATABASE:kurabekko-dev-db}
