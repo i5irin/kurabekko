@@ -10,19 +10,17 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 public class SecurityConfig {
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http, AppProperties appProperties)
-            throws Exception {
+  @Bean
+  public SecurityFilterChain filterChain(HttpSecurity http, AppProperties appProperties)
+      throws Exception {
 
-        ApiKeyAuthFilter apiKeyFilter = new ApiKeyAuthFilter(appProperties);
+    ApiKeyAuthFilter apiKeyFilter = new ApiKeyAuthFilter(appProperties);
 
-        return http
-                .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(
-                        auth -> auth.requestMatchers("/actuator/**", "/hello").permitAll()
-                                .anyRequest()
-                                .permitAll())
-                .addFilterBefore(apiKeyFilter, UsernamePasswordAuthenticationFilter.class)
-                .build();
-    }
+    return http.csrf(csrf -> csrf.disable())
+        .authorizeHttpRequests(
+            auth ->
+                auth.requestMatchers("/actuator/**", "/hello").permitAll().anyRequest().permitAll())
+        .addFilterBefore(apiKeyFilter, UsernamePasswordAuthenticationFilter.class)
+        .build();
+  }
 }

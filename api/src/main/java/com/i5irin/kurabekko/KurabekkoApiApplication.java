@@ -7,9 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
 @SpringBootApplication
-@ConfigurationPropertiesScan(basePackageClasses = { AppProperties.class, LineProperties.class })
+@ConfigurationPropertiesScan(basePackageClasses = {AppProperties.class, LineProperties.class})
 public class KurabekkoApiApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(KurabekkoApiApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(KurabekkoApiApplication.class, args);
+  }
 }

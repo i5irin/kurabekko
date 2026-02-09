@@ -1,4 +1,10 @@
 {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "redhat.java",
+    "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+    "java.format.enabled": true,
+    "java.saveActions.organizeImports": true,
     "java.configuration.updateBuildConfiguration": "automatic",
-    "java.compile.nullAnalysis.mode": "automatic"
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.jdt.ls.vmargs": "-Xmx2G -XX:+UseG1GC -XX:+UseStringDeduplication"
 }

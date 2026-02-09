@@ -5,5 +5,5 @@ import com.i5irin.kurabekko.infra.cosmos.model.EntryEntity;
 import java.util.List;
 
 public interface EntryRepository extends CosmosRepository<EntryEntity, String> {
-    List<EntryEntity> findTop20ByUserIdOrderByCreatedAtDesc(String userId);
+  List<EntryEntity> findTop20ByUserIdOrderByCreatedAtDesc(String userId);
 }
