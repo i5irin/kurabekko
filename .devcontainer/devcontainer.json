@@ -19,5 +19,6 @@
             ]
         }
     },
-    "postCreateCommand": "cd infra && terraform -version && az version && tflint --version"
+    "postCreateCommand": "cd infra && terraform -version && az version && tflint --version",
+    "forwardPorts": [8080]
 }

@@ -13,7 +13,12 @@ app:
   apiKey: ${APP_API_KEY:dev-api-key}
 
 line:
-  channelSecret: ${LINE_CHANNEL_SECRET:}
+  bot:
+    channelSecret: ${LINE_CHANNEL_SECRET:}
+    channelToken: ${LINE_CHANNEL_TOKEN:}
+    handler:
+      path: /line/webhook
+        
 
 spring:
   application:
@@ -25,3 +30,7 @@ spring:
         endpoint: ${COSMOS_ENDPOINT:}
         key: ${COSMOS_KEY:}
         database: ${COSMOS_DATABASE:kurabekko-dev-db}
+
+logging:
+  level:
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG

@@ -89,6 +89,21 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<dependency>
+			<groupId>com.linecorp.bot</groupId>
+			<artifactId>line-bot-spring-boot-webmvc</artifactId>
+			<version>9.14.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.linecorp.bot</groupId>
+			<artifactId>line-bot-spring-boot-handler</artifactId>
+			<version>9.14.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.linecorp.bot</groupId>
+			<artifactId>line-bot-messaging-api-client</artifactId>
+			<version>9.14.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

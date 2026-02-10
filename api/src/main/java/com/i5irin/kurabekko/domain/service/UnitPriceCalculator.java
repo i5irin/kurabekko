@@ -5,20 +5,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class UnitPriceCalculator {
 
-  public Result calc(double price, double amount, String unitRaw) {
+  public UnitPriceResult calc(double price, double amount, String unitRaw) {
     boolean unitOmitted = (unitRaw == null);
 
     if (unitOmitted) {
-      return new Result(price / amount, "pcs");
+      return new UnitPriceResult(price / amount, "pcs");
     }
     String unit = normalize(unitRaw);
 
     return switch (unit) {
-      case "g" -> new Result(price / amount, "g");
-      case "kg" -> new Result(price / (amount * 1000.0), "g");
-      case "ml" -> new Result(price / amount, "ml");
-      case "l" -> new Result(price / (amount * 1000.0), "ml");
-      case "pcs" -> new Result(price / amount, "pcs");
+      case "g" -> new UnitPriceResult(price / amount, "g");
+      case "kg" -> new UnitPriceResult(price / (amount * 1000.0), "g");
+      case "ml" -> new UnitPriceResult(price / amount, "ml");
+      case "l" -> new UnitPriceResult(price / (amount * 1000.0), "ml");
+      case "pcs" -> new UnitPriceResult(price / amount, "pcs");
       default -> throw new IllegalArgumentException("Unsupported unit: " + unitRaw);
     };
   }
@@ -35,5 +35,5 @@ public class UnitPriceCalculator {
     };
   }
 
-  public record Result(double unitPricePerBase, String baseUnit) {}
+  public record UnitPriceResult(double unitPricePerBase, String baseUnit) {}
 }
