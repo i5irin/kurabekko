@@ -1,24 +1,24 @@
 {
-    "name": "kurabekko-dev",
-    "dockerComposeFile": "docker-compose.yml",
-    "service": "dev",
-    "workspaceFolder": "/workspaces/repo",
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "editor.formatOnSave": true,
-                "files.insertFinalNewline": true
-            },
-            "extensions": [
-                "hashicorp.terraform",
-                "ms-azuretools.vscode-azurecontainerapps",
-                "ms-azuretools.vscode-azurecli",
-                "redhat.java",
-                "vscjava.vscode-java-pack",
-                "vscjava.vscode-spring-boot-dashboard"
-            ]
-        }
-    },
-    "postCreateCommand": "cd infra && terraform -version && az version && tflint --version",
-    "forwardPorts": [8080]
+  "name": "kurabekko-dev",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/workspaces/repo",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "files.insertFinalNewline": true
+      },
+      "extensions": [
+        "hashicorp.terraform",
+        "ms-azuretools.vscode-azurecontainerapps",
+        "ms-azuretools.vscode-azurecli",
+        "redhat.java",
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-spring-boot-dashboard"
+      ]
+    }
+  },
+  "postCreateCommand": "cd infra && terraform -version && az version && tflint --version && docker version && docker buildx version",
+  "forwardPorts": [8080]
 }

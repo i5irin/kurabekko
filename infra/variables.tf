@@ -35,3 +35,23 @@ variable "tenant_id" {
 variable "subscription_id" {
   type = string
 }
+
+variable "app_api_key" {
+  type = string
+  sensitive = true
+}
+
+variable "line_channel_secret" {
+  type = string
+  sensitive = true
+}
+
+variable "line_channel_token" {
+  type = string
+  sensitive = true
+}
+
+variable "cosmos_enabled" {
+  type = bool
+  default = false
+}

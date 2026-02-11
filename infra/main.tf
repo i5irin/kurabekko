@@ -88,7 +88,7 @@ resource "azurerm_container_app" "api" {
 
   ingress {
     external_enabled = true
-    target_port      = 80
+    target_port      = 8080
     traffic_weight {
       percentage      = 100
       latest_revision = true
@@ -104,6 +104,37 @@ resource "azurerm_container_app" "api" {
       image  = var.container_image
       cpu    = 0.25
       memory = "0.5Gi"
+
+      env {
+        name  = "COSMOS_ENABLED"
+        value = var.cosmos_enabled ? "true" : "false"
+      }
+
+      env {
+        name = "APP_API_KEY"
+        secret_name = "app-api-key"
+      }
+      env {
+        name = "LINE_CHANNEL_SECRET"
+        secret_name = "line-channel-secret"
+      }
+      env {
+        name = "LINE_CHANNEL_TOKEN"
+        secret_name = "line-channel-token"
+      }
     }
+  }
+
+  secret {
+    name = "app-api-key"
+    value = var.app_api_key
+  }
+  secret {
+    name = "line-channel-secret"
+    value = var.line_channel_secret
+  }
+  secret {
+    name = "line-channel-token"
+    value = var.line_channel_token
   }
 }
